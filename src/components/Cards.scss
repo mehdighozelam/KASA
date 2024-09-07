@@ -1,0 +1,112 @@
+.card_container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 70px;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 70px;
+    font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+}
+
+.card_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #f6f6f6;
+    font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+}
+
+.card {
+    width: 365px;
+    height: 220px;
+    margin: 20px;
+    text-align: left; /* Alignement du texte à gauche */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* Nécessaire pour superposer le texte et le filtre sur l'image */
+    font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+    cursor: pointer; /* Ajout du curseur pointer */
+}
+
+
+
+.card img {
+    width: 100%;
+    height: 220px; /* Ajuste la hauteur de l'image */
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Effet au survol */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    z-index: 1; /* Assurez-vous que le dégradé soit au-dessus de l'image */
+}
+
+.card:hover img {
+    transform: scale(1.05); /* Agrandissement au survol */
+}
+
+.card_text_overlay {
+    position: absolute;
+    bottom: 8px; /* Place le texte à 15px du bas de l'image */
+    left: 15px; /* Place le texte à 15px du côté gauche de l'image */
+    color: white; /* Texte en blanc */
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
+    z-index: 2; /* Place le texte au-dessus du dégradé */
+    font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+}
+
+/* Responsive tablette */
+@media screen and (max-width: 980px) {
+    .card_container {
+      margin: 0px 10px;
+      padding: 0px 10px;
+      font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+    }
+  
+    .card_wrapper {
+      flex-direction: column;
+      padding: 10px;
+      width: 100%;
+      background-color: transparent;
+    }
+  
+    .card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Responsive mobile */
+  @media screen and (max-width: 650px) {
+    .card_container {
+        margin: 0px 20px;
+      padding: 0px;
+      font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+    }
+  
+    .card_wrapper {
+      flex-direction: column;
+      padding: 10px;
+      background-color: transparent;
+    }
+  
+    .card {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }

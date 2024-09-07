@@ -1,0 +1,67 @@
+/* Style général */
+.collapse-container {
+  max-width: 1300px;
+  margin: 20px auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.collapse-section {
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.section-header {
+  background-color: #ff6060;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.section-header h3 {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.collapse-img {
+  width: 20px;
+  transition: transform 0.3s ease;
+}
+
+.collapse-img.rotate {
+  transform: rotate(180deg);
+}
+
+.section-content {
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Responsive pour mobile */
+@media screen and (max-width: 650px) {
+  .collapse-container {
+    width: 85%;
+    margin: 10px auto;
+  }
+
+  .section-header {
+    padding: 10px;
+  }
+}
+
+/* Ajout pour la mise en page spécifique sur la page logement */
+.collapse-container.two-columns {
+  display: flex;
+  justify-content: space-between; /* Pour avoir deux collapses côte à côte */
+  gap: 20px; /* Ajout d'un espacement entre les collapses */
+}
+
+.collapse-container.two-columns .collapse-section {
+  flex: 1; /* Chaque collapse occupe 50% de l'espace */
+}
+

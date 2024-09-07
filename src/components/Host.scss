@@ -1,0 +1,17 @@
+.host-comp {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+  }
+  
+  .host-name {
+    font-size: 20px; 
+    color: #FF6060;
+  }
+  
+  .hostPicture img {
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover; 
+  }

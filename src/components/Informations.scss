@@ -1,0 +1,36 @@
+.informations-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start; /* Pour s'assurer que les éléments s'alignent en haut */
+    max-width: 1320px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+.informations-left, .informations-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacement entre les éléments à l'intérieur des divs */
+}
+
+@media (max-width: 769px) {
+    .informations-container {
+        display: grid;
+        gap: 20px; /* Espacement entre les colonnes */
+    }
+   
+    .informations-right {
+        display: grid; /* Utilisez flex pour aligner les éléments en mode mobile */
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .host-comp {
+        order: 2; /* Déplace Host à la deuxième position en mode mobile */
+    }
+    
+    .rating-container {
+        order: -1; /* Déplace Rating à la première position en mode mobile */
+        align-items: center;
+    }
+}

@@ -1,0 +1,56 @@
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  
+  .errorNumber {
+    font-size: 5rem; 
+    margin-bottom: 50px; 
+    font-size: 200px;
+    color: #FF6060;
+    font-weight: bolder;
+    margin-top: 2%;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .errorText {
+    font-size: 36px; 
+    margin-bottom: 100px; 
+    color:#FF6060;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .errorLinkHome {
+    font-size: 18px; 
+    color: #000000; 
+    padding-bottom: 5.13%;
+    text-decoration: underline;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  @media (max-width: 600px) {
+    .errorContainer {
+      padding: 90px 30px; /* Réduisez l'espace global pour mobile */
+    }
+  
+    .errorNumber {
+      font-size: 120px; /* Réduisez la taille du texte */
+      margin-top: 0; /* Supprime l'espace en haut */
+      margin-bottom: 20px; /* Réduisez l'espace en bas */
+    }
+  
+    .errorText {
+      font-size: 18px; /* Réduisez la taille du texte */
+      margin-bottom: 40px; /* Réduisez l'espace sous le texte */
+    }
+  
+    .errorLinkHome {
+      font-size: 14px; /* Ajuste la taille du texte */
+      margin-bottom: 20px; /* Réduisez l'espace sous le lien */
+    }
+  }
+  

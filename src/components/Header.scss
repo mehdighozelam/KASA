@@ -1,0 +1,51 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat */
+}
+
+.navbar-logo img {
+  height: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px; /* Ajuste cet écart pour l'espace entre les liens */
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #000000; /* Couleur noire par défaut pour les liens */
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif; /* Application de la police Montserrat aux liens */
+}
+
+.navbar-links a:hover {
+  text-decoration: none;
+  color: #FF6060;
+}
+
+.navbar-links a.active {
+  text-decoration: underline;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px; /* Réduire la taille des marges */
+  }
+
+  .navbar-logo img {
+    height: 40px; /* Taille du logo réduite */
+  }
+
+  .navbar-links {
+    gap: 20px; /* Réduire l'espace entre les liens */
+  }
+
+  .navbar-links a {
+    font-size: 16px; /* Taille du texte légèrement réduite */
+  }
+}
