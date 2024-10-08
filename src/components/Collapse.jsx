@@ -13,17 +13,20 @@ export default function Collapse({ data, containerStyle }) {
     newIsOpen[index] = !newIsOpen[index];
     setIsOpen(newIsOpen);
 
-    const images = document.querySelectorAll('.collapse-img');
-    images[index].classList.toggle('rotate'); // Ajoute ou supprime la classe 'rotate'
+    const images = document.querySelectorAll('.colapse-img');
+    images[index].classList.toggle('rotate'); // Ajoute ou supprime la classe 'rotate' de l'image
   };
 
   return (
     <div className="collapse-container" style={containerStyle}>
       {data.map((item, index) => (
         <div key={index} className="collapse-section">
-          <div className="section-header" onClick={() => toggleSection(index)}>
+          <div
+            className="section-header"
+            onClick={() => toggleSection(index)}
+          >
             <h3>{item.title}</h3>
-            <img className="collapse-img" src={collapseimg} alt="flèche d'indication" />
+            <img className="colapse-img" src={collapseimg} alt="flèche d'indication de la collapse"/>
           </div>
           {isOpen[index] && (
             <div className="section-content">

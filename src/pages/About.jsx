@@ -14,9 +14,8 @@ export default function About() {
     <div className="flex-container">
       <Header />
       <AboutBanner />
-      <Collapse data={formattedData} containerStyle={{ maxWidth: '1200px', margin: '0 auto' }} />
+      <Collapse data={formattedData} containerStyle={{maxWidth: '1200px', margin: 'auto', display: 'grid', gap: '20px', paddingBottom: '70px', paddingTop: '50px', gridTemplateColumns: 'repeat(1, 1fr)'}}/>
       <Footer />
     </div>
   );
 }
-

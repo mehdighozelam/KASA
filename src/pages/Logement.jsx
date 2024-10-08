@@ -3,9 +3,11 @@ import Header from "../components/Header";
 import Informations from "../components/Informations";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
+import ErrorPage from "../components/ErrorPage"; // Import du composant ErrorPage
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import appart from "../properties.json"; 
+import appart from "../properties.json";
+
 
 export default function Logement() {
   function prepareLogementDataForCollapse(logement) {
@@ -30,26 +32,26 @@ export default function Logement() {
   const { id } = useParams();
   const navigate = useNavigate();
   const logement = appart.find((logement) => logement.id === id);
-  const collapseData = prepareLogementDataForCollapse(logement);
 
   useEffect(() => {
     if (!logement) {
-      navigate("/error", { replace: true });
+      navigate("/error", { replace: true }); // Redirection vers la page d'erreur si l'ID est invalide
     }
-  }, [logement, navigate]);
+  }, [logement]);
 
   if (!logement) {
-    return null;
+    return <ErrorPage />; // Afficher la page d'erreur si le logement est introuvable
   }
+
+  const collapseData = prepareLogementDataForCollapse(logement);
 
   return (
     <>
-      <Header />
-      <Slider pictures={logement.pictures} />
-      <Informations logement={logement} />
-      {/* Ajout de la classe two-columns pour afficher les collapses côte à côte */}
-      <Collapse data={collapseData} containerStyle={{ maxWidth: "1300px" }} className="two-columns" />
-      <Footer />
+        <Header />
+        <Slider pictures={logement.pictures} />
+        <Informations logement={logement} />
+        <Collapse data={collapseData}/>
+        <Footer />
     </>
-  );
+);
 }

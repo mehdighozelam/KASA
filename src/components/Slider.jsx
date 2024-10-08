@@ -27,9 +27,12 @@ function Slideshow({ pictures }) {
           &#10095;
         </button>
       )}
-      <div className="slide-counter">
-        {currentIndex + 1}/{pictures.length}
-      </div>
+      {/* Afficher la numérotation uniquement s'il y a plus d'une image */}
+      {pictures.length > 1 && (
+        <div className="slide-counter">
+          {currentIndex + 1}/{pictures.length}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,67 +1,57 @@
-/* Style général */
 .collapse-container {
-  max-width: 1300px;
-  margin: 20px auto 30px;
-  font-family: 'Montserrat', sans-serif;
+  max-width: 1330px;
+  margin: auto;
+  display: grid;
+  gap: 130px;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 108px;
 }
 
 .collapse-section {
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.section-header {
-  background-color: #ff6060;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.section-header h3 {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.collapse-img {
-  width: 20px;
-  transition: transform 0.3s ease;
-}
-
-.collapse-img.rotate {
-  transform: rotate(180deg);
-}
-
-.section-content {
-  padding: 10px 20px;
-  background-color: #f7f7f7;
-  color: #333;
-}
-
-/* Responsive pour mobile */
-@media screen and (max-width: 650px) {
-  .collapse-container {
-    width: 85%;
-    margin: 10px auto;
+    border: 1px solid #F6F6F673; 
+    margin-bottom: 2px; 
+    border-radius: 5px;
+    background-color: #F6F6F673;
   }
-
+  
   .section-header {
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 5px; 
+    cursor: pointer;
+    background-color: #FF6060; 
+    border-radius: 5px;
+  }
+  
+  .section-header h3 {
+    color: white; 
+    font-size: 20px; 
+    margin: 5px;
+    font-weight: bolder;
+  }
+  
+  .section-content {
+    padding: 5px; 
+    font-size: 14px; 
+    color: #000000; 
+  }
+  
+  .section-header img {
+    width: 15px; 
+    height: 15px; 
+    transition: transform 0.3s ease; 
+  }
+  
+.section-header img.rotate {
+    transform: rotate(180deg); 
+}
+
+@media (max-width: 769px) {
+  .collapse-container {
+    padding-bottom: 10px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
-
-/* Ajout pour la mise en page spécifique sur la page logement */
-.collapse-container.two-columns {
-  display: flex;
-  justify-content: space-between; /* Pour avoir deux collapses côte à côte */
-  gap: 20px; /* Ajout d'un espacement entre les collapses */
-}
-
-.collapse-container.two-columns .collapse-section {
-  flex: 1; /* Chaque collapse occupe 50% de l'espace */
-}
-
